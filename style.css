@@ -1,0 +1,89 @@
+body
+{
+    margin:0;
+    padding:0;
+    background-image: url('https://img.freepik.com/fotos-premium/paisaje-verde-golf-prado-rayo-sol-manana_3236-1647.jpg?w=2000') ;
+    background-position: center;
+    height: 400px;
+}
+.contenedor{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-color: black;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.caja{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform-origin: 100px 100px 0;
+    animation: girar 20s ease-in-out alternate infinite;
+}
+
+.cara{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    backface-visibility: hidden;
+}
+
+.cara img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cara1{
+    transform: translateZ(100px);
+}
+
+.cara2{
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.cara3{
+    transform: rotateY(90deg) rotateX(90deg) translateZ(100px)
+}
+
+.cara4{
+    transform: rotateX(180deg) rotateZ(-90deg) translateZ(100px);
+}
+
+.cara5{
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+}
+
+.cara6{
+    transform: rotateX(-90deg) translateZ(100px) rotateZ(-90deg);
+}
+
+@keyframes girar {
+    0%{
+        transform: none;
+    }
+    13%,16.6%{
+        transform: rotateY(-90deg);
+    }
+    30%,33.33%{
+        transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    46%,49.999%{
+        transform: rotateY(-270deg) rotateZ(90deg);
+    }
+    63%,66%{
+        transform: rotateY(90deg);
+    }
+    80%,83%{
+        transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    97%,100%{
+        transform: none;
+    }
+}
